@@ -163,7 +163,7 @@
 </head>
 <body>
     <header>
-        <div class="company-name">SSN</div>
+        <div class="company-name"><a style="text-decoration: none; color:white" href="{% url 'frontpage' %}">SSN</a></div>
         {% if request.user.is_authenticated %}
         <div class="buttons">
             <button class="settings-button">Settings</button>

@@ -13,21 +13,40 @@
         align-items: center;
         justify-content: left;
     }
-    .chat a{
+    .chat a {
         text-decoration: none;
         color: black;
         font-size: 17px;
     }
+    .create-room {
+        position: fixed;
+        bottom: 30px;
+        right: 20px; 
+    }
+    .create-room form {
+        display: flex;
+        align-items: center;
+    }
+    .create-room a {
+        margin-left: 10px; 
+        font-size: 20px;
+        background-color: orange;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+    }
 </style>
 
-
-    <h1>Chats</h1>
-    <div class="chat-list">
+<h1>Chats</h1>
+<div class="chat-list">
     {% for room in rooms %}
         <div class="chat">
             <a href="{% url 'room' room.slug %}">{{ room.name }}</a>
         </div>
     {% endfor %}
-    </div>
-
+</div>
+<div class="create-room">
+        <a style="text-decoration: none; color: black;" href="{% url 'create_room' %}" >Add Chat +</a>
+</div>
 {% endblock %}
+
