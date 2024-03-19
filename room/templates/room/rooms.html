@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Rooms | {% endblock %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+    }
+    .chat {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+    .chat a{
+        text-decoration: none;
+        color: black;
+        font-size: 17px;
+    }
+</style>
+
+
+    <h1>Chats</h1>
+    <div class="chat-list">
+    {% for room in rooms %}
+        <div class="chat">
+            <a href="{% url 'room' room.slug %}">{{ room.name }}</a>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

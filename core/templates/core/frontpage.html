@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Welcome | {% endblock %}
+
+{% block content %}
+<style>
+    .chat {
+        height: 120px;
+        display: flex; /* Add flexbox layout */
+        justify-content: center; /* Center content horizontally */
+        align-items: center;
+        background-color: rgba(59, 147, 73, 0.55);
+    }
+    .chat a{
+        font-size: 25px;
+        text-decoration: none;
+        color:white
+    }
+</style>
+{% if request.user.is_authenticated %}
+        <div class="chat-list">
+            <div class="chat">
+                <a href="{% url 'rooms' %}">Rooms</a>
+            </div>
+            <div class="chat">
+                <a href="">Users</a>
+            </div>
+            <div class="chat">
+                <a href="">Articles</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <h2>Authentication credentials were not provided</h2>
+        <a href="{% url 'login' %}">Sing in</a>
+    {% endif %}
+{% endblock %}
