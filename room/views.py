@@ -6,7 +6,6 @@ from .models import Room, Message
 @login_required
 def rooms(request):
     rooms = Room.objects.all()
-
     return render(request, 'room/rooms.html', {'rooms': rooms})
 
 @login_required

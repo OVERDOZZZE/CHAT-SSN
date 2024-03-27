@@ -46,7 +46,12 @@ INSTALLED_APPS = [
     'channels',
     'core',
     'room',
+    'graphene_django'
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'core.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -89,22 +94,22 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 #
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'dNwgqUnOOigdtbvxzMbbZSSOsHJXwulY',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '21193',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'dNwgqUnOOigdtbvxzMbbZSSOsHJXwulY',
+#         'HOST': 'viaduct.proxy.rlwy.net',
+#         'PORT': '21193',
+#     }
+# }
 
 
 # Password validation
